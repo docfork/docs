@@ -21,7 +21,7 @@ export function NavButtons() {
         Support
       </Link>
       <Link
-        href={`${process.env.NEXT_PUBLIC_APP_URL}/sign-up`}
+        href={process.env.NEXT_PUBLIC_APP_URL!}
         target="_blank"
         rel="noopener noreferrer"
         className={cn(
