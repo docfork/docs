@@ -112,7 +112,7 @@ export default function DocforkOG({
           </div>
           <span
             style={{
-              fontSize: "65px",
+              fontSize: "60px",
               fontFamily: "Inter, sans-serif",
               fontWeight: "550",
               color: "#000000",

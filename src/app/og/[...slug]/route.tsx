@@ -33,10 +33,10 @@ async function getLogoDataUrl(): Promise<string> {
   if (logoDataUrl) return logoDataUrl;
 
   // load logo as data url to avoid request-dependent URLs
-  const logoPath = join(process.cwd(), "public", "icon.svg");
+  const logoPath = join(process.cwd(), "public", "icon.png");
   const logoBuffer = await readFile(logoPath);
   const base64 = logoBuffer.toString("base64");
-  logoDataUrl = `data:image/svg+xml;base64,${base64}`;
+  logoDataUrl = `data:image/png;base64,${base64}`;
 
   return logoDataUrl;
 }
