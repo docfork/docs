@@ -9,6 +9,8 @@ export function NavButtons() {
     <div className="flex items-center gap-2">
       <Link
         href="mailto:support@docfork.com"
+        target="_blank"
+        rel="noopener noreferrer"
         className={cn(
           buttonVariants({
             color: "secondary",
@@ -16,10 +18,12 @@ export function NavButtons() {
           "px-3.5 py-1.5 text-nowrap"
         )}
       >
-        Sign In
+        Support
       </Link>
       <Link
         href={`${process.env.NEXT_PUBLIC_APP_URL}/sign-up`}
+        target="_blank"
+        rel="noopener noreferrer"
         className={cn(
           buttonVariants({
             color: "primary",
