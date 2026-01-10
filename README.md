@@ -1,45 +1,91 @@
-# docs
+# Docfork Documentation 📚
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+**The official documentation source for [Docfork](https://docfork.com), the Model Context Protocol (MCP) server that provides up-to-date documentation to AI agents.**
 
-Run development server:
+[![Live Docs](https://img.shields.io/badge/Read_Docs-docfork.com%2Fdocs-0098FF?style=for-the-badge&logo=readthedocs&logoColor=white)](https://docfork.com/docs)
+[![Built with Fumadocs](https://img.shields.io/badge/Built_with-Fumadocs-purple?style=flat-square)](https://fumadocs.dev)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](./LICENSE)
 
-```bash
-npm run dev
-# or
-pnpm dev
-# or
-yarn dev
+---
+
+## 📖 What is this?
+
+This repository hosts the source code and content for the **Docfork Documentation** website. It is a [Next.js](https://nextjs.org) application powered by [Fumadocs](https://fumadocs.dev).
+
+We believe in **Docs-as-Code**. By keeping our documentation in a public repository, we allow the community to:
+
+- Fix typos and improve clarity.
+- Add configuration guides for new MCP clients.
+- Share advanced prompting strategies.
+
+## 📂 Project Structure
+
+If you are looking to edit a specific page, here is where the content lives:
+
+```text
+.
+├── content/
+│     ├── introduction.mdx     # The "Welcome" page
+│     ├── installation/        # Installation guides (Cursor, VS Code, etc.)
+│     ├── features/            # Feature deep dives (Cabinets, Scoping)
+│     └── guides/              # Best practices and prompting strategies
+├── public/                    # Static assets (images, diagrams)
+└── src/app/                   # Next.js app router logic
 ```
 
-Open http://localhost:3000 with your browser to see the result.
+## 🛠️ Local Development
 
-## Explore
+To run the documentation site locally for testing changes:
 
-In the project, you can see:
+1. **Clone the repository:**
 
-- `lib/source.ts`: Code for content source adapter, [`loader()`](https://fumadocs.dev/docs/headless/source-api) provides the interface to access your content.
-- `lib/layout.shared.tsx`: Shared options for layouts, optional but preferred to keep.
+```bash
+git clone [https://github.com/docfork/docs.git](https://github.com/docfork/docs.git)
+cd docs
+```
 
-| Route                     | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| `app/(home)`              | The route group for your landing page and other pages. |
-| `app/docs`                | The documentation layout and pages.                    |
-| `app/api/search/route.ts` | The Route Handler for search.                          |
+2. **Install dependencies:**
 
-### Fumadocs MDX
+```bash
+pnpm install
+# or
+npm install
+```
 
-A `source.config.ts` config file has been included, you can customise different options like frontmatter schema.
+3. **Start the development server:**
 
-Read the [Introduction](https://fumadocs.dev/docs/mdx) for further details.
+```bash
+pnpm run dev
+# or
+npm run dev
+```
 
-## Learn More
+4. **View in Browser:**
+   Open [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000) to see your changes live.
 
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
+## ✍️ Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.dev) - learn about Fumadocs
+We welcome contributions! If you found a new way to use Docfork with a specific tool, please open a PR.
+
+### Adding a New MCP Client
+
+1. Create a new `.mdx` file in `content/docs/installation/`.
+2. Or, add a row to the table in `content/docs/installation/all-clients.mdx`.
+3. Submit a Pull Request with the label `documentation`.
+
+### Improving Guides
+
+If you have a "Prompting Strategy" that works perfectly for a specific library (e.g., "How to get perfect results for Rust Crates"), feel free to add it to `content/docs/guides/`.
+
+## 🔗 Related Repositories
+
+- **[docfork-mcp](https://github.com/docfork/docfork-mcp)**: The core MCP server code.
+- **[docfork-examples](https://www.google.com/search?q=https://github.com/docfork/examples)**: (Coming Soon) Example projects and starter kits.
+
+## 📄 License
+
+This documentation is licensed under the [MIT License](https://www.google.com/search?q=./LICENSE).
+
+---
+
+© 2026 Docfork Corp. Pty Ltd.
