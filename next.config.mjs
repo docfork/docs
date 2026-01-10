@@ -5,11 +5,20 @@ const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/introduction',
+        permanent: false,
+      },
+    ];
+  },
   async rewrites() {
     return [
       {
-        source: '/docs/:path*.mdx',
-        destination: '/llms.mdx/docs/:path*',
+        source: '/:path*.md',
+        destination: '/llms.md/:path*',
       },
     ];
   },
