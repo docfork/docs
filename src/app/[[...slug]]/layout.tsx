@@ -1,7 +1,7 @@
 import { source } from "@/lib/source";
 import { DocsLayout } from "fumadocs-ui/layouts/notebook";
 
-import { baseOptions, gitConfig } from "@/lib/layout.shared";
+import { baseOptions, mcpGitConfig } from "@/lib/layout.shared";
 import { GithubInfo } from "fumadocs-ui/components/github-info";
 import { NavButtons } from "@/components/nav-buttons";
 
@@ -20,8 +20,8 @@ export default function Layout({ children }: LayoutProps<"/[[...slug]]">) {
           type: "custom",
           children: (
             <GithubInfo
-              owner={gitConfig.user}
-              repo={gitConfig.repo}
+              owner={mcpGitConfig.user}
+              repo={mcpGitConfig.repo}
               className="lg:-mx-2 max-w-sm"
               token={process.env.GITHUB_TOKEN}
             />

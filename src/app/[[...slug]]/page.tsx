@@ -13,7 +13,7 @@ import { LLMCopyButton, ViewOptions } from "@/components/ai/page-actions";
 import { Pencil, AlertTriangle } from "lucide-react";
 import { buttonVariants } from "fumadocs-ui/components/ui/button";
 import { cn } from "@/lib/cn";
-import { gitConfig } from "@/lib/layout.shared";
+import { docsGitConfig } from "@/lib/layout.shared";
 
 export default async function Page(props: PageProps<"/[[...slug]]">) {
   const params = await props.params;
@@ -41,7 +41,7 @@ export default async function Page(props: PageProps<"/[[...slug]]">) {
         <ViewOptions
           markdownUrl={`${page.url}.md`}
           // update it to match your repo
-          githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/${page.path}`}
+          githubUrl={`https://github.com/${docsGitConfig.user}/${docsGitConfig.repo}/blob/${docsGitConfig.branch}/content/${page.path}`}
         />
       </div>
       <DocsBody>
@@ -55,7 +55,7 @@ export default async function Page(props: PageProps<"/[[...slug]]">) {
       <footer className="my-10">
         <div className="flex items-center gap-3">
           <a
-            href={`https://github.com/${gitConfig.user}/${gitConfig.repo}/edit/${gitConfig.branch}/content/${page.path}`}
+            href={`https://github.com/${docsGitConfig.user}/${docsGitConfig.repo}/edit/${docsGitConfig.branch}/content/${page.path}`}
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
@@ -69,8 +69,8 @@ export default async function Page(props: PageProps<"/[[...slug]]">) {
             Suggest edits
           </a>
           <a
-            href={`https://github.com/${gitConfig.user}/${
-              gitConfig.repo
+            href={`https://github.com/${docsGitConfig.user}/${
+              docsGitConfig.repo
             }/issues/new?title=Issue%20on%20docs&body=Path:%20${encodeURIComponent(
               page.url
             )}`}
