@@ -10,7 +10,7 @@ import { Callout } from "fumadocs-ui/components/callout";
 
 ## The Problem: Expired Knowledge
 
-AI coding assistants (Claude 3.7, GPT-4o) are powerful, but they suffer from a critical flaw: **The Knowledge Cutoff.**
+AI coding assistants (Claude Sonnet 4.5, GPT-5) are powerful, but they suffer from a critical flaw: **The Knowledge Cutoff.**
 
 - **Outdated Code:** They suggest patterns from 2024 for frameworks released yesterday.
 - **Hallucinations:** They guess APIs that don't exist.
@@ -20,8 +20,8 @@ AI coding assistants (Claude 3.7, GPT-4o) are powerful, but they suffer from a c
 
 Docfork works as a **Model Context Protocol (MCP)** server that sits between your editor and the AI.
 
-1. **You Prompt:** "How do I use the new Next.js 15 `after()` API?"
-2. **We Fetch:** Docfork searches the official documentation in < 500ms.
+1. **You Prompt:** `How do I use the new Next.js 15 'after()' API?`
+2. **We Fetch:** Docfork searches the official documentation in < 1 second.
 3. **AI Codes:** The documentation is injected into the context window, allowing the AI to write perfect, up-to-date code.
 
 ## Key Features
@@ -29,7 +29,7 @@ Docfork works as a **Model Context Protocol (MCP)** server that sits between you
 <Cards>
   <Card
     title="⚡️ Sub-second Latency"
-    description="Optimized for speed. Our p95 retrieval time is ~500ms, ensuring your flow state is never broken."
+    description="Optimized for speed. Our p95 retrieval time is < 1 sec, ensuring your flow state is never broken."
   />
   <Card
     title="🛡️ Private Cabinets"
@@ -38,7 +38,7 @@ Docfork works as a **Model Context Protocol (MCP)** server that sits between you
   />
   <Card
     title="📚 10,000+ Libraries"
-    description="From React to Rust, if it has public docs, we likely index it. If not, you can request it."
+    description="From React to Rust, if it has public docs, we index it. If not, you can request it on GitHub."
     href="/search"
   />
   <Card
@@ -56,11 +56,6 @@ Ready to stop debugging hallucinations?
     title="Installation"
     href="/get-started/installation"
     description="Setup guides for Cursor, VS Code, and Claude."
-  />
-  <Card
-    title="Rules"
-    href="/context/rules"
-    description="Automate Docfork with .cursorrules."
   />
   <Card
     title="Cabinets"
