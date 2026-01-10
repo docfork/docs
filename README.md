@@ -5,8 +5,6 @@
 [![Live Docs](https://img.shields.io/badge/Read_Docs-docfork.com%2Fdocs-FF4500?style=for-the-badge&logo=readthedocs&logoColor=white)](https://docfork.com/docs)
 [![Built with Fumadocs](https://img.shields.io/badge/Built_with-Fumadocs-purple?style=flat-square)](https://fumadocs.dev) [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](./LICENSE)
 
----
-
 ## 📖 What is this?
 
 This repository hosts the source code and content for the **Docfork Documentation** website. It is a [Next.js](https://nextjs.org) application powered by [Fumadocs](https://fumadocs.dev).
