@@ -8,6 +8,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL || "https://app.docfork.com"
+  ),
   title: {
     template: "%s | Docfork Docs",
     default: "Docfork Docs",
