@@ -2,9 +2,8 @@
 
 **The official documentation source for [Docfork](https://docfork.com), the Model Context Protocol (MCP) server that provides up-to-date documentation to AI agents.**
 
-[![Live Docs](https://img.shields.io/badge/Read_Docs-docfork.com%2Fdocs-0098FF?style=for-the-badge&logo=readthedocs&logoColor=white)](https://docfork.com/docs)
-[![Built with Fumadocs](https://img.shields.io/badge/Built_with-Fumadocs-purple?style=flat-square)](https://fumadocs.dev)
-[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](./LICENSE)
+[![Live Docs](https://img.shields.io/badge/Read_Docs-docfork.com%2Fdocs-FF4500?style=for-the-badge&logo=readthedocs&logoColor=white)](https://docfork.com/docs)
+[![Built with Fumadocs](https://img.shields.io/badge/Built_with-Fumadocs-purple?style=flat-square)](https://fumadocs.dev) [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](./LICENSE)
 
 ---
 
@@ -24,13 +23,9 @@ If you are looking to edit a specific page, here is where the content lives:
 
 ```text
 .
-├── content/
-│     ├── introduction.mdx     # The "Welcome" page
-│     ├── installation/        # Installation guides (Cursor, VS Code, etc.)
-│     ├── features/            # Feature deep dives (Cabinets, Scoping)
-│     └── guides/              # Best practices and prompting strategies
-├── public/                    # Static assets (images, diagrams)
-└── src/app/                   # Next.js app router logic
+├── content/                        # Documentation content (MDX files)
+├── public/                         # Static assets (images, icons, logos)
+└── src/                            # Next.js application code
 ```
 
 ## 🛠️ Local Development
@@ -85,7 +80,5 @@ If you have a "Prompting Strategy" that works perfectly for a specific library (
 ## 📄 License
 
 This documentation is licensed under the [MIT License](https://www.google.com/search?q=./LICENSE).
-
----
 
 © 2026 Docfork Corp. Pty Ltd.
