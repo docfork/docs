@@ -11,6 +11,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@takumi-rs/core": "^0.62.6",
+    "@takumi-rs/image-response": "^0.62.6",
     "@vercel/analytics": "^1.6.1",
     "fumadocs-core": "16.4.6",
     "fumadocs-mdx": "14.2.4",
