@@ -97,7 +97,7 @@ export default function DocforkOG({
               aspectRatio: "1 / 1",
               display: "flex",
               alignItems: "center",
-              width: "68",
+              width: 68,
             }}
           >
             <img
@@ -112,7 +112,7 @@ export default function DocforkOG({
           </div>
           <span
             style={{
-              fontSize: "60px",
+              fontSize: 65,
               fontFamily: "Inter, sans-serif",
               fontWeight: "550",
               color: "#000000",

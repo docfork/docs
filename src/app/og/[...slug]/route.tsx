@@ -1,44 +1,31 @@
 import { getPageImage, source } from "@/lib/source";
 import { notFound } from "next/navigation";
 import { ImageResponse } from "@takumi-rs/image-response";
-import type { Font } from "@takumi-rs/core";
+import type { PersistentImage } from "@takumi-rs/core";
 import DocforkOG from "@/components/og-image";
 import { readFile } from "fs/promises";
 import { join } from "path";
 
 export const revalidate = false;
 
-// cache fonts and logo at module level
-let fontsCache: Font[] | null = null;
-let logoDataUrl: string | null = null;
+// load logo at module level for persistent images
+let persistentImages: PersistentImage[] | null = null;
 
-async function getFonts(): Promise<Font[]> {
-  if (fontsCache) return fontsCache;
+async function getPersistentImages(): Promise<PersistentImage[]> {
+  if (persistentImages) return persistentImages;
 
-  // load inter variable font from local file
-  const fontsDir = join(process.cwd(), "public", "fonts");
-  const interBuffer = await readFile(join(fontsDir, "Inter-Variable.woff2"));
+  // load icon.png as persistent image
+  const logoPath = join(process.cwd(), "public", "icon.png");
+  const logoBuffer = await readFile(logoPath);
 
-  fontsCache = [
+  persistentImages = [
     {
-      name: "Inter",
-      data: interBuffer,
+      src: "docfork-logo",
+      data: logoBuffer,
     },
   ];
 
-  return fontsCache;
-}
-
-async function getLogoDataUrl(): Promise<string> {
-  if (logoDataUrl) return logoDataUrl;
-
-  // load logo as data url to avoid request-dependent URLs
-  const logoPath = join(process.cwd(), "public", "icon.png");
-  const logoBuffer = await readFile(logoPath);
-  const base64 = logoBuffer.toString("base64");
-  logoDataUrl = `data:image/png;base64,${base64}`;
-
-  return logoDataUrl;
+  return persistentImages;
 }
 
 export async function GET(
@@ -49,23 +36,21 @@ export async function GET(
   const page = source.getPage(slug.slice(0, -1));
   if (!page) notFound();
 
-  // get cached fonts and logo
-  const fonts = await getFonts();
-  const logo = await getLogoDataUrl();
+  const images = await getPersistentImages();
 
   return new ImageResponse(
     (
       <DocforkOG
         title={page.data.title}
         description={page.data.description}
-        logoUrl={logo}
+        logoUrl="docfork-logo"
       />
     ),
     {
       width: 1200,
       height: 630,
       format: "webp",
-      fonts,
+      persistentImages: images,
     }
   );
 }
