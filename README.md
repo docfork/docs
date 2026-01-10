@@ -64,13 +64,13 @@ We welcome contributions! If you found a new way to use Docfork with a specific 
 
 ### Adding a New MCP Client
 
-1. Create a new `.mdx` file in `content/docs/installation/`.
-2. Or, add a row to the table in `content/docs/installation/all-clients.mdx`.
+1. Create a new `.mdx` file in `content/get-started/`.
+2. Or, add a row to the table in `content/get-started/supported-clients.mdx`.
 3. Submit a Pull Request with the label `documentation`.
 
-### Improving Guides
+### Improving Context Guides
 
-If you have a "Prompting Strategy" that works perfectly for a specific library (e.g., "How to get perfect results for Rust Crates"), feel free to add it to `content/docs/guides/`.
+If you have advanced strategies for using library identifiers or rules that work perfectly for a specific library (e.g., "How to get perfect results for Rust Crates"), feel free to add it to `content/context/`.
 
 ## 🔗 Related Repositories
 

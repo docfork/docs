@@ -1,6 +1,7 @@
 import { source } from "@/lib/source";
 import { DocsLayout } from "fumadocs-ui/layouts/notebook";
-import { baseOptions } from "@/lib/layout.shared";
+
+import { baseOptions, gitConfig } from "@/lib/layout.shared";
 import { GithubInfo } from "fumadocs-ui/components/github-info";
 import { NavButtons } from "@/components/nav-buttons";
 
@@ -12,15 +13,16 @@ export default function Layout({ children }: LayoutProps<"/[[...slug]]">) {
       {...base}
       nav={{ ...nav, mode: "top" }}
       tabMode="navbar"
+      sidebar={{ collapsible: false }}
       tree={source.getPageTree()}
       links={[
         {
           type: "custom",
           children: (
             <GithubInfo
-              owner="docfork"
-              repo="docfork-mcp"
-              className="lg:-mx-2"
+              owner={gitConfig.user}
+              repo={gitConfig.repo}
+              className="lg:-mx-2 max-w-sm"
               token={process.env.GITHUB_TOKEN}
             />
           ),

@@ -13,7 +13,7 @@ export function NavButtons() {
           buttonVariants({
             color: "secondary",
           }),
-          "px-3.5 py-1.5"
+          "px-3.5 py-1.5 text-nowrap"
         )}
       >
         Sign In
@@ -24,7 +24,7 @@ export function NavButtons() {
           buttonVariants({
             color: "primary",
           }),
-          "px-3.5 py-1.5 bg-docfork"
+          "px-3.5 py-1.5 bg-docfork text-nowrap"
         )}
       >
         Sign Up
